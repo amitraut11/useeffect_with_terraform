@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket  = "firstreactapp-ts-terra-cp-cd-backend"
+    bucket  = "useeffectbackend"
     encrypt = true
     key     = "terraform.tfstate"
     region  = "us-east-1"
