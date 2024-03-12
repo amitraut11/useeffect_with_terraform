@@ -103,7 +103,7 @@ resource "aws_codepipeline" "cicd_pipeline" {
       version          = "1"
       output_artifacts = ["tf-code"]
       configuration = {
-        FullRepositoryId     = "amitraut11/firstreactapp-ts-terra-cp-cd"
+        FullRepositoryId     = "amitraut11/useeffect_with_terraform"
         BranchName           = "main"
         ConnectionArn        = var.codestar_connector_credentials
         OutputArtifactFormat = "CODE_ZIP"
