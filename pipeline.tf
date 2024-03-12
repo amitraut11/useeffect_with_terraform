@@ -107,6 +107,7 @@ resource "aws_codepipeline" "cicd_pipeline" {
         BranchName           = "main"
         ConnectionArn        = var.codestar_connector_credentials
         OutputArtifactFormat = "CODE_ZIP"
+        DetectChanges        = "true"
       }
     }
   }
@@ -126,7 +127,20 @@ resource "aws_codepipeline" "cicd_pipeline" {
     }
   }
 
-
+  stage {
+    name = "Image"
+    action {
+      name            = "Image"
+      category        = "Build"
+      provider        = "CodeBuild"
+      version         = "1"
+      owner           = "AWS"
+      input_artifacts = ["tf-code"]
+      configuration = {
+        ProjectName = "tf-cicd-image"
+      }
+    }
+  }
 
   stage {
     name = "Apply"
@@ -143,20 +157,7 @@ resource "aws_codepipeline" "cicd_pipeline" {
     }
   }
 
-  stage {
-    name = "Image"
-    action {
-      name            = "Image"
-      category        = "Build"
-      provider        = "CodeBuild"
-      version         = "1"
-      owner           = "AWS"
-      input_artifacts = ["tf-code"]
-      configuration = {
-        ProjectName = "tf-cicd-image"
-      }
-    }
-  }
+
 
 
 
