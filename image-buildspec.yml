@@ -6,7 +6,7 @@ phases:
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION| docker login --username AWS --password-stdin 365235792173.dkr.ecr.us-east-1.amazonaws.com/learnreact-tf-cp-cd
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH}
-      - REPO_URL=365235792173.dkr.ecr.us-east-1.amazonaws.com/learnreact-tf-cp-cd
+      - REPO_URL=365235792173.dkr.ecr.us-east-1.amazonaws.com/useeffectexample
   build:
     commands:
       - echo "IMAGE_TAG" = $IMAGE_TAG
