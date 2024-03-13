@@ -24,7 +24,7 @@ export function PersonScore() {
   return (
     <div>
     <h1>Hello, {name}!</h1>
-    <p>Your score is {score}</p>
+    <p>Your score is best one {score}</p>
   
 
 
