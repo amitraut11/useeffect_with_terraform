@@ -16,4 +16,4 @@ target_group_name              = "cc-demo-alb-tg"
 
 demo_app_service_name = "cc-demo-app-service"
 
-ecr_repo_url = "365235792173.dkr.ecr.us-east-1.amazonaws.com/learnreact-tf-cp-cd:latest"
+ecr_repo_url = "365235792173.dkr.ecr.us-east-1.amazonaws.com/useeffectexample:latest"
